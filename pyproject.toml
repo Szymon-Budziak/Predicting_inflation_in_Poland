@@ -16,6 +16,8 @@ plotly = "^5.22.0"
 darts = "^0.29.0"
 prophet = "^1.1.5"
 openpyxl = "^3.1.2"
+keras = "^3.3.3"
+tensorflow = "^2.16.1"
 
 [tool.poetry.group.dev.dependencies]
 notebook = "^7.1.3"
