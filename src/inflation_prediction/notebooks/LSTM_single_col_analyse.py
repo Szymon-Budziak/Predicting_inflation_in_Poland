@@ -29,6 +29,9 @@ train_size = int(len(scaled_data) * 0.8)
 train_data = scaled_data[:train_size]
 test_data = scaled_data[train_size:]
 #%%
+print(f'Shape of train_data: {train_data.shape}')
+print(f'Shape of test_data: {test_data.shape}')
+#%%
 import numpy as np
 
 def create_sequences(data, seq_length):
@@ -43,7 +46,11 @@ seq_length = 5
 X_train, y_train = create_sequences(train_data, seq_length)
 X_test, y_test = create_sequences(test_data, seq_length)
 #%%
-X_train.shape
+print(f'Shape of X_train: {X_train.shape}')
+print(f'Shape of y_train: {y_train.shape}')
+#%%
+print(f'Shape of X_test: {X_test.shape}')
+print(f'Shape of y_test: {y_test.shape}')
 #%% md
 # We define an LSTM model using Sequential() and add an LSTM layer with 50 units, ReLU activation function, and input shape (seq_length, 1) where seq_length is the length of the input sequences with Dense layer with one unit (for regression) to output the predicted value compiling the model with Adam optimizer and mean squared error loss function.
 #%%
@@ -82,6 +89,9 @@ print(f'Last loss value: {last_loss_value}')
 #%%
 train_predictions = model.predict(X_train)
 test_predictions = model.predict(X_test)
+#%%
+print(f'Shape of train_predictions: {train_predictions.shape}')
+print(f'Shape of test_predictions: {test_predictions.shape}')
 #%%
 train_predictions = scaler.inverse_transform(np.squeeze(train_predictions))
 test_predictions = scaler.inverse_transform(np.squeeze(test_predictions))
