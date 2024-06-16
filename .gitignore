@@ -161,4 +161,3 @@ cython_debug/
 data/
 *.ipynb
 .DS_Store
-images/
